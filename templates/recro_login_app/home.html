@@ -1,0 +1,8 @@
+{% extends 'recro_login_app/base.html' %}
+
+{% block content %}
+  <h2>Homepage</h2>
+  <p>Hello {{ user.username }}!</p>
+  <a href="{% url 'logout' %}">Log out</a>
+
+{% endblock %}
