@@ -1,1 +1,1 @@
-web: gunicorn recro_social_login.wsgi --log-file -
+web: gunicorn recrosociallogin.wsgi --log-file -
