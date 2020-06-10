@@ -25,7 +25,7 @@ SECRET_KEY = 'l=z5e13oep$ti@=l(@5%s2^bqz=ty6i(d_i^s)y4(_&a@2%*9*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['recrosociallogin.herokuapp.com', '0.0.0.0']
 
 
 # Application definition
