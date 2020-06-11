@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>[My Title]</title>
+    {% block styles %}{% endblock %}
+    <link href='' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <main>
+      <h2>{% block title %}{% endblock %}</h2>
+      {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>

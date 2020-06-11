@@ -1,4 +1,6 @@
 {% extends "admin/index.html" %}
+{% load terms_tags %}
+
 {% load i18n %}
 
 {% block bodyclass %}{{ block.super }} app-{{ app_label }}{% endblock %}
@@ -14,5 +16,6 @@
 </div>
 {% endblock %}
 {% endif %}
+{% show_terms_if_not_agreed %}
 
 {% block sidebar %}{% endblock %}
