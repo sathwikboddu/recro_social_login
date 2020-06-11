@@ -25,4 +25,6 @@ urlpatterns = [
     path('login', LoginView.as_view(template_name='recro_login_app/login.html'), name='login'),
     path('logout', LogoutView.as_view(), name='logout'),
     path('oauth/', include('social_django.urls', namespace='social')),
+    path('terms/', include('termsandconditions.urls')),
+
 ]
