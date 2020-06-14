@@ -25,7 +25,7 @@ SECRET_KEY = 'l=z5e13oep$ti@=l(@5%s2^bqz=ty6i(d_i^s)y4(_&a@2%*9*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['recrosociallogin.herokuapp.com']
 
 
 # Application definition
@@ -39,10 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'recro_login_app',
-    'termsandconditions',
 ]
 
-# TERMS_BASE_TEMPLATE = 'recro_login_app:page.html'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,7 +51,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'social_django.middleware.SocialAuthExceptionMiddleware',
-    'termsandconditions.middleware.TermsAndConditionsRedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'recro_social_login.urls'
@@ -103,14 +100,25 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 #Github
 SOCIAL_AUTH_GITHUB_KEY = '8ac7d58477bd5429dd00'
 SOCIAL_AUTH_GITHUB_SECRET = '6b6b09e122ca3f409e399e64045991d7a8e36fcc'
-SOCIAL_AUTH_GITHUB_SCOPE = ['email']
+SOCIAL_AUTH_GITHUB_SCOPE = ['user:email','first_name']
+SOCIAL_AUTH_GITHUB_EXTRA_DATA = ['fullname','first_name']
 
 #Twitter
 SOCIAL_AUTH_TWITTER_KEY = 'oVPimjCFDy20dEObcuwFONEUb'
 SOCIAL_AUTH_TWITTER_SECRET = '4BE9XPdkbCyxGKtklq06jpiQ6x1NWOkUieDj7i1C3gp4Rezkmy'
-SOCIAL_AUTH_TWITTER_SCOPE = ['email']
+SOCIAL_AUTH_TWITTER_SCOPE = ['email','phone']
 SOCIAL_AUTH_TWITTER_PROFILE_EXTRA_PARAMS = {
     'fields': 'id, name, email'}
+
+#Linkedin
+SOCIAL_AUTH_LINKEDIN_OAUTH2_KEY = '77874uxkq8d5kz'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SECRET = 'bTcpwLhOZWE1Eadk'
+SOCIAL_AUTH_LINKEDIN_OAUTH2_SCOPE = ['r_liteprofile', 'r_emailaddress']
+SOCIAL_AUTH_LINKEDIN_OAUTH2_FIELD_SELECTORS = ['emailAddress','liteprofile']
+SOCIAL_AUTH_LINKEDIN_OAUTH2_EXTRA_DATA = [
+    ('emailAddress', 'emailAddress'),
+    ('liteprofile', 'liteprofile'),
+]
 
 WSGI_APPLICATION = 'recro_social_login.wsgi.application'
 

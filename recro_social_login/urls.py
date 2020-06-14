@@ -21,10 +21,9 @@ from recro_login_app import views
 urlpatterns = [
     # path('recro_login_app/', include('recro_login_app.urls')),
     path('admin/', admin.site.urls),
+    path('signup/', views.signup, name='signup'),
     path('home/', views.home, name='home'),
     path('login', LoginView.as_view(template_name='recro_login_app/login.html'), name='login'),
     path('logout', LogoutView.as_view(), name='logout'),
     path('oauth/', include('social_django.urls', namespace='social')),
-    path('terms/', include('termsandconditions.urls')),
-
 ]
