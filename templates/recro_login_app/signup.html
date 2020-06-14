@@ -1,0 +1,16 @@
+{% extends 'recro_login_app/base.html' %}
+
+{% block content %}
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+  <br>
+  <p><strong>-- OR --</strong></p>
+  <a href="{% url 'social:complete' 'github' %}">Sign up with GitHub</a><br>
+  <a href="{% url 'social:begin' 'twitter' %}">Sign up with Twitter</a><br>
+  <a href="{% url 'social:begin' 'linkedin-oauth2' %}">Sign up with Linkedin</a>
+
+{% endblock %}
